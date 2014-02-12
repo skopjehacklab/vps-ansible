@@ -1,0 +1,2 @@
+[all]
+vps ansible_ssh_host=damjan.softver.org.mk ansible_ssh_port=222
