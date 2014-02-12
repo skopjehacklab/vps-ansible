@@ -1,0 +1,8 @@
+---
+- name: Setting up DNS server(s)...
+  hosts: all
+  roles:
+    - debian-common-base
+    - debian-dotdeb
+    - { role: debian-elasticsearch, tags: ['elasticsearch'] }
+    - gdamjan.uwsgi
