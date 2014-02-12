@@ -1,0 +1,32 @@
+---
+- name: Making sure apt cache is up to date...
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: Installing must-have tools...
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - sysstat
+    - rsync
+    - vim
+    - strace
+    - tcpdump
+    - lsof
+    - traceroute
+    - screen
+    - tmux
+    - python-pycurl
+    - ganglia-monitor
+
+- name: Removing unneeded stuff...
+  apt: pkg={{ item }} state=absent
+  with_items:
+    - rpcbind
+    - whoopsie
+    - apport
+    - popularity-contest
+    - update-notifier-common
+
+- name: Disable splash on Ubuntu
+  lineinfile: dest=/etc/default/grub regexp=^GRUB_CMDLINE_LINUX_DEFAULT=  line='GRUB_CMDLINE_LINUX_DEFAULT=""'
+  notify: update grub
+  when: ansible_distribution == 'Ubuntu'

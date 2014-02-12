@@ -1,0 +1,3 @@
+---
+- name: Enable backports
+  apt_repository: repo='deb http://us.debian.org/debian wheezy-backports main' state=present

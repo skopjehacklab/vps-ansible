@@ -1,0 +1,12 @@
+---
+- name: restart nginx
+  service: name=nginx state=restarted
+
+- name: restart apache
+  service: name=apache2 state=restarted
+
+- name: update grub
+  command: update-grub2
+
+- name: restart ssh
+  service: name=ssh state=restarted

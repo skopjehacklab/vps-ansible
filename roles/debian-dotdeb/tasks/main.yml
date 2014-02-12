@@ -1,0 +1,10 @@
+---
+- name: Adding GnuPG key for dotdeb...
+  apt_key: id=89DF5277 url=http://www.dotdeb.org/dotdeb.gpg state=present
+
+- name: Enabling repository (www.dotdeb.org)...
+  apt_repository: repo='deb http://packages.dotdeb.org wheezy all' state=present
+
+- name: Enabling repository for PHP 5.5 (www.dotdeb.org)...
+  apt_repository: repo='deb http://packages.dotdeb.org wheezy-php55 all' state=present
+  when: php_version == "5.5"
