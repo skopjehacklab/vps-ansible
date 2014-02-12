@@ -1,5 +1,5 @@
 ---
-- name: Setting up DNS server(s)...
+- name: Setting up our server(s)...
   hosts: all
   roles:
     - debian-common-base
