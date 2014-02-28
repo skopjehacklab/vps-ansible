@@ -4,5 +4,5 @@
   roles:
     - debian-common-base
     - debian-dotdeb
-    - { role: debian-elasticsearch, tags: ['elasticsearch'] }
+    - debian-elasticsearch
     - gdamjan.uwsgi

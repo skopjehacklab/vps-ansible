@@ -1,0 +1,3 @@
+---
+use_logstash: false
+use_elasticsearch: true
