@@ -9,6 +9,6 @@ Install it with:
 
 Usage:
 
-    ansible-playbook -i hosts site.yml --sudo
+    ansible-playbook site.yml
 
 Optionaly add `--ask-sudo-pass` if you need to enter a password for sudo.
