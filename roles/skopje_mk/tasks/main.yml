@@ -1,0 +1,9 @@
+---
+- name: Generate Locales
+  locale_gen: state=present name={{ item }}
+  with_items:
+    - en_US.UTF-8
+    - mk_MK.UTF-8
+
+- name: Set timezone to Europe/Skopje
+  debconf: name=tzdata question=tzdata/Areas vtype=select value=Europe/Skopje
