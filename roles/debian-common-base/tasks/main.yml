@@ -15,7 +15,7 @@
     - screen
     - tmux
     - python-pycurl
-    - ganglia-monitor
+    - ntp
 
 - name: Removing unneeded stuff...
   apt: pkg={{ item }} state=absent
