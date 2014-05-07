@@ -1,0 +1,22 @@
+---
+- name: create directory
+  file: path=/srv/html/myip owner=root group=root mode=755 state=directory
+
+- name: copy static files
+  copy: src=html/{{ item }} dest=/srv/html/myip/{{ item }} owner=root group=root mode=644
+  with_items:
+    - index.html
+    - myip.html
+    - myip.json
+    - centered.css
+    - iemac-center.css
+    - ipv4.png
+    - ipv6.png
+
+- name: copy nginx config file
+  copy: src=nginx.conf dest=/etc/nginx/sites-enabled/myip.conf owner=root group=root mode=644
+  notify: restart nginx
+
+- name: copy nginx config file
+  copy: src=nginx.inc dest=/etc/nginx/sites-enabled/myip.inc owner=root group=root mode=644
+  notify: restart nginx

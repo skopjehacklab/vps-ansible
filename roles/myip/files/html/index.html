@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Која ми е адресата?</title>
+<link rel="stylesheet" href="centered.css" type="text/css">
+<style type="text/css">@import("iemac-center.css");</style>
+<style type="text/css">
+  body {
+    font-family: "DejaVu Sans", sans-serif;
+  }
+  #distance {
+     margin-bottom:-17.75em;
+  }
+  #container {
+    width: 45em;
+    height: 17.5em;
+    border: 1px solid #000;
+  }
+  #container h1, form {
+    text-align:center;
+  }
+
+  #info p {
+    width: 35em;
+    margin: 1em 5em;
+    text-align: center;
+    line-height: 1.4em;
+    color: #777;
+  }
+  #notice {
+     width: 45em;
+     margin:0 auto;
+     position:relative;
+     text-align: left;
+     line-height: 1.4em;
+     color: #777;
+  }
+  #notice ul {
+    list-style-position: inside;
+    padding-left: 1.5em;
+    text-indent: -1em;
+  }
+  #info a, #info a:visited { color: #777; text-decoration: none; }
+  #notice a {text-decoration: none; border-bottom: 1px dashed;}
+  #notice a:link {color: #000}
+  #notice a:visited {color: #777}
+  #notice a:hover {color: blue; border-bottom: 1px solid}
+
+  span#fonts {
+    font-family:monospace;
+    font-size:0.8em;
+  }
+
+</style>
+</head>
+<body>
+<div id="distance"></div>
+
+<div id="container">
+    <h1>
+       <!--#echo var="REMOTE_ADDR"--><br />
+       <!--#set var="whois" value="http://who.is/whois-ip/ip-address/$REMOTE_ADDR"-->
+       <img src="/check" />
+    </h1>
+    <div id='info'>
+       <p>е адресата со која пристапуваш до тука
+       <small>(<a href="<!--#echo var="whois"-->">whois</a>)</small></p>
+    </div>
+</div>
+<div id='notice'>
+    <strong>Екстра:</strong>
+    <ul>
+        <li>Со <a href="/get">http://myip.ot.mk/get</a> ќе ја добиеш само адресата без пропратниов spam;</li>
+        <li>Со <a href="/json">http://myip.ot.mk/json</a> ќе добиеш JSON објект со адресата, додади ?callback=нешто за JSONP;</li>
+        <li>Со <a href="http://ipv6.ot.mk">ipv6.ot.mk</a> или <a href="http://ipv4.ot.mk">ipv4.ot.mk</a> форсираш проверка на ipv4 или ipv6;</li>
+        <li>Можеш да ембедираш слика <a href="http://myip.ot.mk/check">&lt;img src="http://myip.ot.mk/check" &gt;</a>, која ќе ти каже дали користиш ipv4 или ipv6;</li>
+        <li>Конфигурацијата е на <a href="https://gist.github.com/1710068">gist</a>.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

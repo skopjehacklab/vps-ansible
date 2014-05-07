@@ -1,0 +1,5 @@
+<!--# if expr="${arg_callback}" -->
+<!--# echo var="arg_callback" -->({"ip":"<!--#echo var="REMOTE_ADDR"-->"});
+<!--# else -->
+{"ip":"<!--#echo var="REMOTE_ADDR"-->"}
+<!--# endif -->

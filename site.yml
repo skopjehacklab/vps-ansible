@@ -5,5 +5,7 @@
     - debian-common-base
     - debian-dotdeb
     - debian-elasticsearch
+    - skopje_mk
     - gdamjan.uwsgi
     - funny-stuff
+    - myip
