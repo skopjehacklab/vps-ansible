@@ -1,8 +1,9 @@
 ---
 - name: Setting up our server(s)...
-  hosts: all
+  hosts: vps
   roles:
     - debian-common-base
     - debian-dotdeb
     - debian-elasticsearch
     - gdamjan.uwsgi
+    - funny-stuff

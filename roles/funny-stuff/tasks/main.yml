@@ -1,0 +1,17 @@
+---
+- name: create directory
+  file: path=/srv/html/funny-stuff owner=root group=root mode=755 state=directory
+
+- name: copy static files
+  copy: src=html/{{ item }} dest=/srv/html/funny-stuff/{{ item }} owner=root group=root mode=644
+  with_items:
+    - da.html
+    - ne.html
+    - Grumpy-Cat.jpg
+    - Yes-Cat.jpg
+    - favicon.ico
+    - robots.txt
+
+- name: copy nginx config file
+  copy: src=nginx.conf dest=/etc/nginx/sites-enabled/funny-stuff.conf owner=root group=root mode=644
+  notify: restart nginx
